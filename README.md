@@ -4,9 +4,36 @@
 
 # Cross Agents Runtime (Python)
 
+[![PyPI](https://img.shields.io/pypi/v/crossagents-runtime?label=PyPI&logo=pypi&logoColor=white&color=3775A9)](https://pypi.org/project/crossagents-runtime/)
+[![Python](https://img.shields.io/pypi/pyversions/crossagents-runtime?logo=python&logoColor=white)](https://pypi.org/project/crossagents-runtime/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 Cross Agents Runtime is a provider-agnostic, model-adaptive agent runtime for building controlled mono-agent and multi-agent systems on Python. It picks an execution pattern that fits a given task, model, policy, and operational constraints, then runs it inside an audited, bounded session.
 
 This repository contains the Python implementation of the framework. Implementations in other ecosystems (.NET, TypeScript) live in separate repositories so each can follow the conventions and release cadence of its own ecosystem.
+
+## Installation
+
+The package is published to [PyPI](https://pypi.org/project/crossagents-runtime/) at version `0.1.0a1` (alpha pre-release). Requires Python `>= 3.11`.
+
+```sh
+# pip - alpha versions need --pre
+pip install --pre crossagents-runtime
+
+# or pin the version explicitly
+pip install crossagents-runtime==0.1.0a1
+
+# uv - alpha versions need --prerelease=allow
+uv add crossagents-runtime --prerelease=allow
+```
+
+After install:
+
+```py
+from crossagents.core import AgentRuntime, RuntimeOptions
+from crossagents.patterns import NoToolPattern, PlanExecuteValidatePattern
+from crossagents.testing import FakeModelAdapter, InMemoryAuditSink
+```
 
 ## What it is
 
