@@ -1,0 +1,73 @@
+[build-system]
+requires = ["hatchling>=1.21"]
+build-backend = "hatchling.build"
+
+[project]
+name = "crossagent-runtime"
+version = "0.1.0a1"
+description = "Provider-agnostic, model-adaptive agent runtime for building controlled mono-agent and multi-agent systems on Python."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.11"
+authors = [
+  { name = "CrossAgent Runtime contributors" }
+]
+keywords = ["agent", "agents", "ai", "llm", "runtime", "orchestration", "multi-agent", "framework"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Software Development :: Libraries",
+  "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://github.com/ramzimhd/crossagent-runtime-python"
+Repository = "https://github.com/ramzimhd/crossagent-runtime-python"
+
+[project.optional-dependencies]
+test = [
+  "pytest>=8.0",
+  "pytest-asyncio>=0.23",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/crossagent"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "src/crossagent",
+  "tests",
+  "examples",
+  "docs",
+  "README.md",
+  "LICENSE",
+]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra -q --strict-markers"
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+  "E", "W",   # pycodestyle
+  "F",        # pyflakes
+  "I",        # isort
+  "B",        # flake8-bugbear
+  "UP",       # pyupgrade
+  "RUF",      # ruff-specific
+]
+ignore = [
+  "E501",     # line too long, line-length above is the cap
+]

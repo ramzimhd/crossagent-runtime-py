@@ -1,0 +1,51 @@
+# Build / dist
+build/
+dist/
+*.egg-info/
+*.egg
+wheels/
+.eggs/
+
+# Caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.pyre/
+.pytype/
+.dmypy.json
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env
+.env.*
+*.secret
+secrets.json
+
+# Coverage
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+*.cover
+.tox/
+.nox/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# uv
+.uv/
+uv.lock
