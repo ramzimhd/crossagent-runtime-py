@@ -1,9 +1,9 @@
 from __future__ import annotations
 
-from crossagent.abstractions.agents import AgentTask
-from crossagent.core import AgentRuntime, RuntimeOptions
-from crossagent.patterns import NoToolPattern
-from crossagent.testing import InMemoryAuditSink
+from crossagents.abstractions.agents import AgentTask
+from crossagents.core import AgentRuntime, RuntimeOptions
+from crossagents.patterns import NoToolPattern
+from crossagents.testing import InMemoryAuditSink
 from tests.fixtures import echo_adapter
 
 

@@ -1,8 +1,8 @@
 from __future__ import annotations
 
-from crossagent.abstractions.tools import ToolCall
-from crossagent.testing import FakeTool
-from crossagent.tooling import ToolRegistry
+from crossagents.abstractions.tools import ToolCall
+from crossagents.testing import FakeTool
+from crossagents.tooling import ToolRegistry
 
 
 async def test_registry_rejects_unknown_tool() -> None:

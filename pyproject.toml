@@ -3,14 +3,14 @@ requires = ["hatchling>=1.21"]
 build-backend = "hatchling.build"
 
 [project]
-name = "crossagent-runtime"
+name = "crossagents-runtime"
 version = "0.1.0a1"
 description = "Provider-agnostic, model-adaptive agent runtime for building controlled mono-agent and multi-agent systems on Python."
 readme = "README.md"
 license = { file = "LICENSE" }
 requires-python = ">=3.11"
 authors = [
-  { name = "CrossAgent Runtime contributors" }
+  { name = "Cross Agents Runtime contributors" }
 ]
 keywords = ["agent", "agents", "ai", "llm", "runtime", "orchestration", "multi-agent", "framework"]
 classifiers = [
@@ -27,8 +27,8 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/ramzimhd/crossagent-runtime-python"
-Repository = "https://github.com/ramzimhd/crossagent-runtime-python"
+Homepage = "https://github.com/ramzimhd/crossagent-runtime-py"
+Repository = "https://github.com/ramzimhd/crossagent-runtime-py"
 
 [project.optional-dependencies]
 test = [
@@ -37,16 +37,17 @@ test = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/crossagent"]
+packages = ["src/crossagents"]
 
 [tool.hatch.build.targets.sdist]
 include = [
-  "src/crossagent",
+  "src/crossagents",
   "tests",
   "examples",
   "docs",
   "README.md",
   "LICENSE",
+  "logo.png",
 ]
 
 [tool.pytest.ini_options]

@@ -1,16 +1,20 @@
-# CrossAgent Runtime (Python)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ramzimhd/crossagent-runtime-py/main/logo.png" alt="Cross Agents Runtime" width="160" />
+</p>
 
-CrossAgent Runtime is a provider-agnostic, model-adaptive agent runtime for building controlled mono-agent and multi-agent systems on Python. It picks an execution pattern that fits a given task, model, policy, and operational constraints, then runs it inside an audited, bounded session.
+# Cross Agents Runtime (Python)
+
+Cross Agents Runtime is a provider-agnostic, model-adaptive agent runtime for building controlled mono-agent and multi-agent systems on Python. It picks an execution pattern that fits a given task, model, policy, and operational constraints, then runs it inside an audited, bounded session.
 
 This repository contains the Python implementation of the framework. Implementations in other ecosystems (.NET, TypeScript) live in separate repositories so each can follow the conventions and release cadence of its own ecosystem.
 
 ## What it is
 
-- A small set of stable contracts (`crossagent.abstractions`) describing models, tools, memory, patterns, policy, and audit.
-- A minimal runtime host (`crossagent.core`) that registers adapters and patterns, selects one for each task, runs it, and surfaces a structured result.
-- A first-party set of safe patterns (`crossagent.patterns`): a no-tool single call, a Plan-Execute-Validate flow, a JSON plan skeleton, and a strictly bounded ReAct loop.
-- Optional layers for tooling (`crossagent.tooling`) and memory (`crossagent.memory`) that can be plugged in independently.
-- Deterministic test doubles (`crossagent.testing`) for pattern and runtime tests with no external dependencies.
+- A small set of stable contracts (`crossagents.abstractions`) describing models, tools, memory, patterns, policy, and audit.
+- A minimal runtime host (`crossagents.core`) that registers adapters and patterns, selects one for each task, runs it, and surfaces a structured result.
+- A first-party set of safe patterns (`crossagents.patterns`): a no-tool single call, a Plan-Execute-Validate flow, a JSON plan skeleton, and a strictly bounded ReAct loop.
+- Optional layers for tooling (`crossagents.tooling`) and memory (`crossagents.memory`) that can be plugged in independently.
+- Deterministic test doubles (`crossagents.testing`) for pattern and runtime tests with no external dependencies.
 
 ## What it isn't
 
@@ -34,13 +38,13 @@ This repository contains the Python implementation of the framework. Implementat
 ```python
 import asyncio
 
-from crossagent.abstractions.agents import AgentTask
-from crossagent.abstractions.models import (
+from crossagents.abstractions.agents import AgentTask
+from crossagents.abstractions.models import (
     ModelCapabilities, ModelProfile, ModelProvider,
 )
-from crossagent.core import AgentRuntime, RuntimeOptions
-from crossagent.patterns import NoToolPattern, PlanExecuteValidatePattern
-from crossagent.testing import FakeModelAdapter, InMemoryAuditSink
+from crossagents.core import AgentRuntime, RuntimeOptions
+from crossagents.patterns import NoToolPattern, PlanExecuteValidatePattern
+from crossagents.testing import FakeModelAdapter, InMemoryAuditSink
 
 
 async def main() -> None:
@@ -56,7 +60,7 @@ async def main() -> None:
     )
 
     runtime.register_model(
-        FakeModelAdapter(profile, "Hello from CrossAgent Runtime.")
+        FakeModelAdapter(profile, "Hello from Cross Agents Runtime.")
     ).register_pattern(NoToolPattern()).register_pattern(PlanExecuteValidatePattern())
 
     result = await runtime.run(
@@ -77,12 +81,12 @@ A self-contained runnable version of this lives in [examples/minimal_runtime.py]
 
 | Module | Purpose |
 | --- | --- |
-| `crossagent.abstractions` | Stable contracts (models, tools, memory, patterns, policy, audit) |
-| `crossagent.core` | Runtime host, session, selector, default policy engine, audit pipeline |
-| `crossagent.patterns` | First-party safe patterns |
-| `crossagent.tooling` | Optional tool registry, validator, executor, normalizer |
-| `crossagent.memory` | Optional retrieval, ranking, compression, sliding buffer |
-| `crossagent.testing` | Deterministic test doubles |
+| `crossagents.abstractions` | Stable contracts (models, tools, memory, patterns, policy, audit) |
+| `crossagents.core` | Runtime host, session, selector, default policy engine, audit pipeline |
+| `crossagents.patterns` | First-party safe patterns |
+| `crossagents.tooling` | Optional tool registry, validator, executor, normalizer |
+| `crossagents.memory` | Optional retrieval, ranking, compression, sliding buffer |
+| `crossagents.testing` | Deterministic test doubles |
 
 ## Design principles
 
@@ -91,7 +95,7 @@ A self-contained runnable version of this lives in [examples/minimal_runtime.py]
 3. **Bounded by default**: every shipped pattern declares step counts and risk levels; the runtime rejects unbounded configurations.
 4. **Optional middleware**: tooling and memory are separate modules and separate runtime services; they can be omitted entirely.
 5. **Auditable**: every session emits a canonical sequence of audit events suitable for compliance and debugging.
-6. **Deterministic to test**: `crossagent.testing` ships in-process fakes for every external dependency the framework defines.
+6. **Deterministic to test**: `crossagents.testing` ships in-process fakes for every external dependency the framework defines.
 7. **Small public surface**: contracts are short, immutable, and documented; framework code never exposes provider-specific types.
 
 ## Current status

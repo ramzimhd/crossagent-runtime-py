@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from collections.abc import Sequence
 
-from crossagent.abstractions.models import (
+from crossagents.abstractions.models import (
     ModelCapabilities,
     ModelFinishReason,
     ModelProfile,
@@ -12,7 +12,7 @@ from crossagent.abstractions.models import (
     ModelRequest,
     ModelResponse,
 )
-from crossagent.testing import FakeModelAdapter
+from crossagents.testing import FakeModelAdapter
 
 
 def echo_profile(

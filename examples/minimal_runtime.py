@@ -10,8 +10,8 @@ from __future__ import annotations
 import asyncio
 import sys
 
-from crossagent.abstractions.agents import AgentTask, AgentTaskType
-from crossagent.abstractions.models import (
+from crossagents.abstractions.agents import AgentTask, AgentTaskType
+from crossagents.abstractions.models import (
     ModelCapabilities,
     ModelFinishReason,
     ModelProfile,
@@ -19,9 +19,9 @@ from crossagent.abstractions.models import (
     ModelRequest,
     ModelResponse,
 )
-from crossagent.core import AgentRuntime, RuntimeOptions
-from crossagent.patterns import NoToolPattern, PlanExecuteValidatePattern
-from crossagent.testing import FakeModelAdapter, InMemoryAuditSink
+from crossagents.core import AgentRuntime, RuntimeOptions
+from crossagents.patterns import NoToolPattern, PlanExecuteValidatePattern
+from crossagents.testing import FakeModelAdapter, InMemoryAuditSink
 
 
 async def main() -> int:

@@ -1,9 +1,9 @@
 from __future__ import annotations
 
-from crossagent.abstractions.agents import AgentState, AgentTask
-from crossagent.abstractions.policy import AgentPolicy
-from crossagent.patterns import NoToolPattern, PlanExecuteValidatePattern
-from crossagent.testing import PatternTestHarness
+from crossagents.abstractions.agents import AgentState, AgentTask
+from crossagents.abstractions.policy import AgentPolicy
+from crossagents.patterns import NoToolPattern, PlanExecuteValidatePattern
+from crossagents.testing import PatternTestHarness
 from tests.fixtures import echo_adapter, scripted_adapter
 
 

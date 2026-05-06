@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import pytest
 
-from crossagent.core import AgentRuntime
-from crossagent.patterns import NoToolPattern
+from crossagents.core import AgentRuntime
+from crossagents.patterns import NoToolPattern
 from tests.fixtures import echo_adapter
 
 

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import pytest
 
-from crossagent.patterns import BoundedReActOptions, BoundedReActPattern
+from crossagents.patterns import BoundedReActOptions, BoundedReActPattern
 
 
 def test_unbounded_max_steps_is_rejected() -> None:

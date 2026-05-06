@@ -1,9 +1,9 @@
 from __future__ import annotations
 
-from crossagent.abstractions.agents import AgentTask, AgentTaskType
-from crossagent.abstractions.policy import AgentPolicy
-from crossagent.core import PatternSelector, RuntimePolicyEngine, known_pattern_ids
-from crossagent.patterns import JsonPlanPattern, NoToolPattern, PlanExecuteValidatePattern
+from crossagents.abstractions.agents import AgentTask, AgentTaskType
+from crossagents.abstractions.policy import AgentPolicy
+from crossagents.core import PatternSelector, RuntimePolicyEngine, known_pattern_ids
+from crossagents.patterns import JsonPlanPattern, NoToolPattern, PlanExecuteValidatePattern
 from tests.fixtures import echo_profile
 
 

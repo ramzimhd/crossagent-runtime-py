@@ -1,15 +1,15 @@
 from __future__ import annotations
 
-from crossagent.abstractions.agents import AgentTask
-from crossagent.core import AgentRuntime, RuntimeOptions, known_pattern_ids
-from crossagent.memory import (
+from crossagents.abstractions.agents import AgentTask
+from crossagents.core import AgentRuntime, RuntimeOptions, known_pattern_ids
+from crossagents.memory import (
     ContextCompressor,
     MemoryRanker,
     MemoryRetriever,
     SlidingMemoryBuffer,
 )
-from crossagent.patterns import NoToolPattern
-from crossagent.testing import FakeMemoryProvider, InMemoryAuditSink
+from crossagents.patterns import NoToolPattern
+from crossagents.testing import FakeMemoryProvider, InMemoryAuditSink
 from tests.fixtures import echo_adapter
 
 
